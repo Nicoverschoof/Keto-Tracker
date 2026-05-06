@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Keto Tracker</title>
+
+<!-- PWA / iPhone homescreen -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Keto Tracker">
+<meta name="theme-color" content="#1D9E75">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f0; color: #1a1a1a; padding: 24px; padding-bottom: max(24px, env(safe-area-inset-bottom)); max-width: 700px; margin: 0 auto; }
+  h1 { font-size: 20px; font-weight: 500; margin-bottom: 6px; }
+  .tabs { display: flex; gap: 8px; margin-bottom: 24px; }
+  .tab { padding: 7px 18px; border-radius: 8px; border: 1px solid #ddd; background: white; font-size: 14px; cursor: pointer; color: #666; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+  .tab.actief { background: #1D9E75; color: white; border-color: #1D9E75; }
+  .pagina { display: none; }
+  .pagina.actief { display: block; }
+  .totals-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
+  .metric { background: white; border-radius: 10px; padding: 14px; border: 1px solid #e8e8e8; }
+  .metric-label { font-size: 12px; color: #888; margin-bottom: 4px; }
+  .metric-value { font-size: 24px; font-weight: 500; }
+  .metric-unit { font-size: 12px; color: #888; }
+  .instellingen { background: white; border: 1px solid #e8e8e8; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; }
+  .instellingen-titel { font-size: 14px; font-weight: 500; margin-bottom: 12px; }
+  .instellingen-rij { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .inst-veld { display: flex; align-items: center; gap: 8px; }
+  .inst-veld label { font-size: 13px; color: #666; white-space: nowrap; min-width: 110px; }
+  .inst-veld input { width: 80px; padding: 6px 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; outline: none; }
+  .inst-veld input:focus { border-color: #1D9E75; }
+  .inst-veld span { font-size: 13px; color: #888; }
+  .inst-hint { font-size: 12px; color: #aaa; margin-top: 10px; }
+  .balken { margin-bottom: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .balk-label { font-size: 13px; color: #666; margin-bottom: 6px; display: flex; justify-content: space-between; }
+  .balk-bg { background: #eee; border-radius: 4px; height: 8px; }
+  .balk-fill { height: 8px; border-radius: 4px; transition: width 0.4s, background 0.4s; }
+  .warning { font-size: 12px; color: #e24b4a; margin-top: 4px; }
+  .add-form { background: white; border: 1px solid #e8e8e8; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; }
+  .form-title { font-size: 14px; font-weight: 500; margin-bottom: 12px; }
+  .form-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .field label { font-size: 12px; color: #666; display: block; margin-bottom: 4px; }
+  .field input { width: 100%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; outline: none; }
+  .field input:focus { border-color: #1D9E75; }
+  .add-btn { width: 100%; padding: 10px; font-size: 14px; cursor: pointer; background: #1D9E75; color: white; border: none; border-radius: 8px; font-weight: 500; }
+  .add-btn:hover { background: #178a65; }
+
+  /* Foto knop */
+  .foto-rij { display: flex; gap: 8px; margin-bottom: 10px; align-items: flex-end; }
+  .foto-rij .field { flex: 1; }
+  .naam-ai-rij { display: flex; gap: 8px; align-items: flex-end; margin-bottom: 8px; }
+  .foto-scan-rij { display: flex; gap: 8px; margin-bottom: 10px; }
+  .foto-scan-knop { flex: 1; padding: 8px 12px; background: #f5f5f5; border: 1px solid #ddd; border-radius: 8px; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; color: #444; }
+  .foto-scan-knop:hover { background: #eaeaea; }
+  .foto-scan-knop:disabled { opacity: 0.5; }
+  .foto-btn { width: 36px; height: 36px; background: #f0f0f0; border: 1px solid #ddd; border-radius: 8px; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s; }
+  .foto-btn:hover { background: #e0e0e0; }
+  .foto-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .barcode-btn { width: 36px; height: 36px; background: #f0f0f0; border: 1px solid #ddd; border-radius: 8px; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s; }
+  .barcode-btn:hover { background: #e0e0e0; }
+  .barcode-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .bereken-btn { padding: 0 12px; height: 36px; background: #1D9E75; color: white; border: none; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+  .bereken-btn:hover { background: #178a65; }
+  .bereken-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .foto-input { display: none; }
+  .foto-hint { font-size: 12px; margin-top: 6px; display: none; padding: 6px 10px; border-radius: 6px; }
+  .foto-hint.exact { color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; }
+  .foto-hint.schatting { color: #854d0e; background: #fef9c3; border: 1px solid #fef08a; }
+  .foto-hint.receptenboek { color: #1e40af; background: #dbeafe; border: 1px solid #bfdbfe; }
+  .foto-spinner { font-size: 12px; color: #888; margin-top: 6px; display: none; }
+
+  /* API key sectie in instellingen */
+  .api-sectie { background: white; border: 1px solid #e8e8e8; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; }
+  .api-sectie .instellingen-titel { margin-bottom: 8px; }
+  .api-key-rij { display: flex; gap: 8px; align-items: center; }
+  .api-key-rij input { flex: 1; padding: 8px 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 13px; outline: none; font-family: monospace; }
+  .api-key-rij input:focus { border-color: #7c3aed; }
+  .api-key-rij button { padding: 8px 14px; background: #7c3aed; color: white; border: none; border-radius: 8px; font-size: 13px; cursor: pointer; }
+  .api-key-rij button:hover { background: #6d28d9; }
+  .api-hint { font-size: 12px; color: #aaa; margin-top: 8px; }
+
+  /* Ingrediënten correctie sectie */
+  .ingredienten-sectie { display: none; background: #f9f5ff; border: 1px solid #e0d0ff; border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; }
+  .ingredienten-sectie .sectie-label { font-size: 12px; color: #7c3aed; font-weight: 600; margin-bottom: 8px; }
+  .ingredienten-rij { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
+  .ingredienten-rij input.ing-naam { flex: 1; padding: 7px 10px; border: 1px solid #d0b8ff; border-radius: 8px; font-size: 14px; outline: none; background: white; }
+  .ingredienten-rij input.ing-naam:focus { border-color: #7c3aed; }
+  .ingredienten-rij input.ing-gewicht { width: 64px; padding: 7px 8px; border: 1px solid #d0b8ff; border-radius: 8px; font-size: 14px; outline: none; background: white; text-align: right; }
+  .ingredienten-rij input.ing-gewicht:focus { border-color: #7c3aed; }
+  .ingredienten-rij .ing-eenheid { font-size: 13px; color: #888; flex-shrink: 0; }
+  .ingredienten-rij .ing-verwijder { background: none; border: none; color: #ccc; font-size: 16px; cursor: pointer; padding: 0 2px; flex-shrink: 0; }
+  .ingredienten-rij .ing-verwijder:hover { color: #e55; }
+  .ing-toevoegen { width: 100%; margin-top: 4px; padding: 7px; background: white; border: 1px dashed #c0a0ff; border-radius: 8px; color: #7c3aed; font-size: 13px; cursor: pointer; }
+  .ing-toevoegen:hover { background: #f0e8ff; }
+  .herbereken-btn { margin-top: 10px; width: 100%; padding: 8px; background: #7c3aed; color: white; border: none; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; }
+  .herbereken-btn:hover { background: #6d28d9; }
+  .herbereken-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .portie-rij { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e0d0ff; }
+  .portie-label { font-size: 13px; color: #555; font-weight: 500; }
+  .portie-btn { width: 28px; height: 28px; border-radius: 50%; border: 1px solid #c0a0ff; background: white; color: #7c3aed; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; line-height: 1; }
+  .portie-btn:hover { background: #f0e8ff; }
+  #portie-waarde { font-size: 15px; font-weight: 600; color: #7c3aed; min-width: 16px; text-align: center; }
+  .portie-info { font-size: 12px; color: #999; margin-left: 4px; }
+  .meals-list { display: flex; flex-direction: column; gap: 8px; }
+  .meal-card { background: white; border: 1px solid #e8e8e8; border-radius: 10px; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .meal-info { flex: 1; }
+  .meal-name { font-size: 14px; font-weight: 500; }
+  .meal-time { font-size: 12px; color: #888; }
+  .meal-macros { display: flex; gap: 14px; }
+  .macro { font-size: 12px; color: #888; }
+  .macro span { font-weight: 500; color: #1a1a1a; }
+  .edit-btn { background: none; border: none; cursor: pointer; font-size: 15px; color: #ccc; padding: 4px 8px; border-radius: 6px; transition: color 0.2s, background 0.2s; }
+  .edit-btn:hover { color: #378ADD; background: #f0f6ff; }
+  .delete-btn { background: none; border: none; cursor: pointer; font-size: 16px; color: #ccc; padding: 4px 8px; border-radius: 6px; transition: color 0.2s, background 0.2s; }
+  .delete-btn:hover { color: #e24b4a; background: #fff0f0; }
+  .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 100; align-items: center; justify-content: center; -webkit-overflow-scrolling: touch; }
+  .modal-overlay.actief { display: flex; }
+  .modal { background: white; border-radius: 14px; padding: 24px; width: 90%; max-width: 420px; }
+  .modal h3 { font-size: 16px; font-weight: 500; margin-bottom: 16px; }
+  .modal-veld { margin-bottom: 12px; }
+  .modal-veld label { font-size: 12px; color: #666; display: block; margin-bottom: 4px; }
+  .modal-veld input { width: 100%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; outline: none; }
+  .modal-veld input:focus { border-color: #1D9E75; }
+  .modal-knoppen { display: flex; gap: 8px; margin-top: 16px; }
+  .modal-opslaan { flex: 1; padding: 10px; background: #1D9E75; color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; }
+  .modal-opslaan:hover { background: #178a65; }
+  .modal-annuleer { flex: 1; padding: 10px; background: white; color: #666; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; cursor: pointer; }
+  .modal-annuleer:hover { background: #f5f5f5; }
+  .empty { font-size: 14px; color: #999; text-align: center; padding: 2rem; border: 1px dashed #ddd; border-radius: 10px; }
+  .week-grafiek { background: white; border: 1px solid #e8e8e8; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; }
+  .week-grafiek h2 { font-size: 15px; font-weight: 500; margin-bottom: 16px; }
+  .grafiek-knoppen { display: flex; gap: 8px; margin-bottom: 16px; }
+  .grafiek-knop { padding: 5px 14px; border-radius: 8px; border: 1px solid #ddd; background: white; font-size: 13px; cursor: pointer; color: #666; }
+  .grafiek-knop.actief { background: #1D9E75; color: white; border-color: #1D9E75; }
+  .dag-kaarten { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+  .dag-kaart { background: white; border: 1px solid #e8e8e8; border-radius: 10px; padding: 12px 16px; cursor: pointer; }
+  .dag-kaart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .dag-datum { font-size: 14px; font-weight: 500; }
+  .dag-cal { font-size: 13px; color: #888; display: flex; align-items: center; gap: 6px; }
+  .dag-toggle { font-size: 11px; transition: transform 0.2s; display: inline-block; }
+  .dag-kaart.open .dag-toggle { transform: rotate(180deg); }
+  .dag-macros { display: flex; gap: 14px; }
+  .dag-macro { font-size: 12px; color: #888; }
+  .dag-macro span { font-weight: 500; color: #1a1a1a; }
+  .dag-maaltijden { margin-top: 8px; font-size: 12px; color: #aaa; }
+  .dag-detail { display: none; margin-top: 10px; border-top: 1px solid #f0f0f0; padding-top: 10px; }
+  .dag-kaart.open .dag-detail { display: block; }
+  .dag-maaltijd-rij { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f5f5f5; }
+  .dag-maaltijd-rij:last-child { border-bottom: none; }
+  .dag-maaltijd-info { flex: 1; min-width: 0; }
+  .dag-maaltijd-naam { font-size: 13px; font-weight: 500; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .dag-maaltijd-macros { font-size: 11px; color: #aaa; margin-top: 2px; }
+  .dag-maaltijd-acties { display: flex; gap: 5px; flex-shrink: 0; margin-left: 8px; }
+  .dag-edit-btn { padding: 3px 8px; font-size: 11px; border: 1px solid #1D9E75; color: #1D9E75; background: white; border-radius: 5px; cursor: pointer; }
+  .dag-del-btn { padding: 3px 8px; font-size: 11px; border: 1px solid #ffcccc; color: #e55; background: white; border-radius: 5px; cursor: pointer; }
+  .dag-readonly-label { font-size: 11px; color: #ccc; text-align: center; margin-top: 8px; }
+  .historie-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .terug-btn { padding: 6px 12px; background: #f0f0f0; border: none; border-radius: 8px; font-size: 13px; cursor: pointer; color: #555; }
+  .terug-btn:hover { background: #e0e0e0; }
+  .historie-datum { font-size: 16px; font-weight: 600; color: #333; }
+  .h-readonly-banner { background: #fef9c3; border: 1px solid #fef08a; border-radius: 8px; padding: 8px 12px; font-size: 12px; color: #854d0e; margin-bottom: 12px; text-align: center; }
+
+  @media (max-width: 600px) {
+    body { padding: 12px; }
+    .totals-grid { gap: 6px; }
+    .metric { padding: 10px 8px; }
+    .metric-label { font-size: 10px; }
+    .metric-value { font-size: 18px; }
+    .metric-unit { font-size: 10px; }
+    .form-row { grid-template-columns: 1fr 1fr; }
+    .form-row .field:first-child { grid-column: 1 / -1; }
+    .instellingen-rij { grid-template-columns: 1fr; }
+    .inst-veld { flex-wrap: wrap; }
+    .tabs { gap: 6px; }
+    .tab { padding: 10px 14px; font-size: 15px; flex: 1; text-align: center; }
+    .meal-macros { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 10px; margin-top: 4px; }
+    .macro { font-size: 11px; }
+    .meal-card { flex-wrap: nowrap; align-items: flex-start; gap: 4px; padding: 10px 12px; }
+    .meal-info { flex: 1; min-width: 0; }
+    .edit-btn { padding: 2px 4px; font-size: 13px; }
+    .delete-btn { padding: 2px 4px; font-size: 13px; }
+    .grafiek-knoppen { flex-wrap: wrap; }
+    .grafiek-knop { flex: 1; text-align: center; }
+    .modal { width: 95%; padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Keto tracker</h1>
+
+<!-- Splash screen -->
+<div id="splash" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#2ECC40;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity 0.5s ease;">
+  <h1 style="color:white;font-size:42px;font-weight:500;margin:0;letter-spacing:-0.5px;text-align:center;line-height:1.1;font-family:-apple-system,sans-serif">Keto<br>Tracker</h1>
+  <div style="width:40px;height:2px;background:rgba(255,255,255,0.5);border-radius:2px;margin-top:28px"></div>
+  <p style="color:rgba(255,255,255,0.6);font-size:12px;margin:16px 0 0;letter-spacing:2px;font-family:-apple-system,sans-serif">LADEN...</p>
+</div>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <h3>Maaltijd bewerken</h3>
+    <div class="modal-veld"><label>Naam</label><input type="text" id="modal-naam" /></div>
+    <div class="modal-veld"><label>Calorieën (kcal)</label><input type="number" id="modal-cal" min="0" /></div>
+    <div class="modal-veld"><label>Koolhydraten (g)</label><input type="number" id="modal-kh" min="0" /></div>
+    <div class="modal-veld"><label>Eiwitten (g)</label><input type="number" id="modal-ei" min="0" /></div>
+    <div class="modal-veld"><label>Vetten (g)</label><input type="number" id="modal-vet" min="0" /></div>
+    <div class="modal-knoppen">
+      <button class="modal-annuleer" onclick="sluitModal()">Annuleer</button>
+      <button class="modal-opslaan" onclick="slaModalOp()">Opslaan</button>
+    </div>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab actief" onclick="toonPagina('vandaag', this)">Vandaag</button>
+  <button class="tab" onclick="toonPagina('week', this)">Weekoverzicht</button>
+  <button class="tab" onclick="toonPagina('instellingen', this)">Instellingen</button>
+</div>
+
+<!-- PAGINA: VANDAAG -->
+<div class="pagina actief" id="pagina-vandaag">
+
+  <div class="totals-grid">
+    <div class="metric">
+      <div class="metric-label">Calorieën</div>
+      <div class="metric-value" id="total-cal">0</div>
+      <div class="metric-unit">kcal</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Koolhydraten</div>
+      <div class="metric-value" id="total-kh">0</div>
+      <div class="metric-unit">gram</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Eiwitten</div>
+      <div class="metric-value" id="total-ei">0</div>
+      <div class="metric-unit">gram</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Vetten</div>
+      <div class="metric-value" id="total-vet">0</div>
+      <div class="metric-unit">gram</div>
+    </div>
+  </div>
+
+  <div class="balken">
+    <div class="balk-wrap">
+      <div class="balk-label"><span>Calorieën</span><span id="label-cal">0 / 2000 kcal</span></div>
+      <div class="balk-bg"><div class="balk-fill" id="balk-cal" style="width:0%;background:#1D9E75;"></div></div>
+      <div class="warning" id="warn-cal" style="display:none;">Let op: je nadert je calorie limiet!</div>
+    </div>
+    <div class="balk-wrap">
+      <div class="balk-label"><span>Koolhydraten</span><span id="label-kh">0 / 20g</span></div>
+      <div class="balk-bg"><div class="balk-fill" id="balk-kh" style="width:0%;background:#E28A17;"></div></div>
+      <div class="warning" id="warn-kh" style="display:none;">Let op: je nadert je koolhydraten limiet!</div>
+    </div>
+    <div class="balk-wrap">
+      <div class="balk-label"><span>Eiwitten</span><span id="label-ei">0 / 150g</span></div>
+      <div class="balk-bg"><div class="balk-fill" id="balk-ei" style="width:0%;background:#378ADD;"></div></div>
+      <div class="warning" id="warn-ei" style="display:none;">Let op: je nadert je eiwitten limiet!</div>
+    </div>
+    <div class="balk-wrap">
+      <div class="balk-label"><span>Vetten</span><span id="label-vet">0 / 150g</span></div>
+      <div class="balk-bg"><div class="balk-fill" id="balk-vet" style="width:0%;background:#BA7517;"></div></div>
+      <div class="warning" id="warn-vet" style="display:none;">Let op: je nadert je vetten limiet!</div>
+    </div>
+  </div>
+
+  <div class="add-form">
+    <div class="form-title">Maaltijd toevoegen</div>
+    <div class="naam-ai-rij">
+      <div class="field" style="flex:1"><label>Naam / omschrijving</label><input type="text" id="inp-naam" placeholder="bijv. een glas rosé of kipfilet 150g" /></div>
+      <div style="display:flex;flex-direction:column;justify-content:flex-end">
+        <label style="font-size:12px;color:#666;display:block;margin-bottom:4px;">AI</label>
+        <button class="bereken-btn" id="bereken-btn" onclick="berekenViaOmschrijving()" title="Macros berekenen via omschrijving">✨ Bereken</button>
+      </div>
+    </div>
+    <div class="foto-scan-rij">
+      <button class="foto-scan-knop" id="foto-btn" onclick="document.getElementById('foto-input').click()" title="Foto maken">📷 Foto</button>
+      <input type="file" id="foto-input" class="foto-input" accept="image/*" onchange="verwerkFoto(this)" />
+    </div>
+    <div class="foto-spinner" id="foto-spinner">⏳ Gemini analyseert je maaltijd...</div>
+    <div class="foto-hint" id="foto-hint">✓ Macros ingevuld op basis van foto — controleer ingrediënten hieronder</div>
+
+    <div class="ingredienten-sectie" id="ingredienten-sectie">
+      <div class="portie-rij">
+        <span class="portie-label">Porties:</span>
+        <button class="portie-btn" onclick="pasPortieAan(-1)">−</button>
+        <span id="portie-waarde">1</span>
+        <button class="portie-btn" onclick="pasPortieAan(1)">+</button>
+        <span id="portie-info" class="portie-info"></span>
+      </div>
+      <div class="sectie-label">🥦 Herkende ingrediënten — pas naam of gewicht aan</div>
+      <div id="ingredienten-lijst"></div>
+      <button class="ing-toevoegen" onclick="voegIngredientToe()">+ Ingrediënt toevoegen</button>
+      <button class="herbereken-btn" id="herbereken-btn" onclick="herbereken()">🔄 Herbereken macros</button>
+    </div>
+    <div class="form-row">
+      <div class="field"><label>Kcal</label><input type="number" id="inp-cal" placeholder="350" min="0" /></div>
+      <div class="field"><label>Koolhyd.</label><input type="number" id="inp-kh" placeholder="4" min="0" /></div>
+      <div class="field"><label>Eiwitten</label><input type="number" id="inp-ei" placeholder="30" min="0" /></div>
+      <div class="field"><label>Vetten</label><input type="number" id="inp-vet" placeholder="20" min="0" /></div>
+    </div>
+    <button class="add-btn" onclick="voegToe()">+ Maaltijd toevoegen</button>
+  </div>
+
+  <div class="meals-list" id="maaltijden-lijst">
+    <div class="empty" id="empty-state">Nog geen maaltijden vandaag. Voeg je eerste toe!</div>
+  </div>
+
+</div>
+
+<!-- PAGINA: HISTORIE DAG -->
+<div class="pagina" id="pagina-historiedag">
+  <div class="historie-header">
+    <button class="terug-btn" onclick="toonPagina('week', document.querySelector('.tab[onclick*=week]'))">← Weekoverzicht</button>
+    <span class="historie-datum" id="historie-datum-label"></span>
+  </div>
+
+  <div class="totals-grid">
+    <div class="metric"><div class="metric-label">Calorieën</div><div class="metric-value" id="h-total-cal">0</div><div class="metric-unit">kcal</div></div>
+    <div class="metric"><div class="metric-label">Koolhydraten</div><div class="metric-value" id="h-total-kh">0</div><div class="metric-unit">gram</div></div>
+    <div class="metric"><div class="metric-label">Eiwitten</div><div class="metric-value" id="h-total-ei">0</div><div class="metric-unit">gram</div></div>
+    <div class="metric"><div class="metric-label">Vetten</div><div class="metric-value" id="h-total-vet">0</div><div class="metric-unit">gram</div></div>
+  </div>
+
+  <div class="balken">
+    <div class="balk-wrap"><div class="balk-label"><span>Calorieën</span><span id="h-label-cal">0 / 2000 kcal</span></div><div class="balk-bg"><div class="balk-fill" id="h-balk-cal" style="width:0%;background:#1D9E75;"></div></div></div>
+    <div class="balk-wrap"><div class="balk-label"><span>Koolhydraten</span><span id="h-label-kh">0 / 20g</span></div><div class="balk-bg"><div class="balk-fill" id="h-balk-kh" style="width:0%;background:#E28A17;"></div></div></div>
+    <div class="balk-wrap"><div class="balk-label"><span>Eiwitten</span><span id="h-label-ei">0 / 150g</span></div><div class="balk-bg"><div class="balk-fill" id="h-balk-ei" style="width:0%;background:#378ADD;"></div></div></div>
+    <div class="balk-wrap"><div class="balk-label"><span>Vetten</span><span id="h-label-vet">0 / 150g</span></div><div class="balk-bg"><div class="balk-fill" id="h-balk-vet" style="width:0%;background:#BA7517;"></div></div></div>
+  </div>
+
+  <div class="meals-list" id="h-maaltijden-lijst"></div>
+
+  <div id="h-add-form" class="add-form" style="display:none;">
+    <div class="form-title">Maaltijd toevoegen</div>
+    <div class="naam-ai-rij">
+      <div class="field" style="flex:1"><label>Naam / omschrijving</label><input type="text" id="h-inp-naam" placeholder="bijv. een glas rosé of kipfilet 150g" /></div>
+      <div style="display:flex;flex-direction:column;justify-content:flex-end">
+        <label style="font-size:12px;color:#666;display:block;margin-bottom:4px;">AI</label>
+        <button class="bereken-btn" id="h-bereken-btn" onclick="berekenViaOmschrijvingHistorie()" title="Macros berekenen via omschrijving">✨ Bereken</button>
+      </div>
+    </div>
+    <div class="foto-scan-rij">
+      <button class="foto-scan-knop" id="h-foto-btn" onclick="document.getElementById('h-foto-input').click()" title="Foto maken">📷 Foto</button>
+      <input type="file" id="h-foto-input" class="foto-input" accept="image/*" onchange="verwerkFotoHistorie(this)" />
+    </div>
+    <div class="foto-spinner" id="h-foto-spinner">⏳ Gemini analyseert je maaltijd...</div>
+    <div class="foto-hint" id="h-foto-hint"></div>
+    <div class="ingredienten-sectie" id="h-ingredienten-sectie">
+      <div class="portie-rij">
+        <span class="portie-label">Porties:</span>
+        <button class="portie-btn" onclick="pasPortieAanHistorie(-1)">−</button>
+        <span id="h-portie-waarde">1</span>
+        <button class="portie-btn" onclick="pasPortieAanHistorie(1)">+</button>
+        <span id="h-portie-info" class="portie-info"></span>
+      </div>
+      <div class="sectie-label">🥦 Herkende ingrediënten — pas naam of gewicht aan</div>
+      <div id="h-ingredienten-lijst"></div>
+      <button class="ing-toevoegen" onclick="voegIngredientToeHistorie()">+ Ingrediënt toevoegen</button>
+      <button class="herbereken-btn" id="h-herbereken-btn" onclick="herberekenHistorie()">🔄 Herbereken macros</button>
+    </div>
+    <div class="form-row">
+      <div class="field"><label>Kcal</label><input type="number" id="h-inp-cal" placeholder="350" min="0" /></div>
+      <div class="field"><label>Koolhyd.</label><input type="number" id="h-inp-kh" placeholder="4" min="0" /></div>
+      <div class="field"><label>Eiwitten</label><input type="number" id="h-inp-ei" placeholder="30" min="0" /></div>
+      <div class="field"><label>Vetten</label><input type="number" id="h-inp-vet" placeholder="20" min="0" /></div>
+    </div>
+    <button class="add-btn" onclick="voegHistorieToe()">+ Maaltijd toevoegen</button>
+  </div>
+</div>
+
+<!-- PAGINA: WEEK -->
+<div class="pagina" id="pagina-week">
+  <div class="week-grafiek">
+    <h2>Afgelopen 7 dagen</h2>
+    <div class="grafiek-knoppen">
+      <button class="grafiek-knop actief" onclick="toonGrafiek('calorieën', this)">Calorieën</button>
+      <button class="grafiek-knop" onclick="toonGrafiek('koolhydraten', this)">Koolhydraten</button>
+      <button class="grafiek-knop" onclick="toonGrafiek('eiwitten', this)">Eiwitten</button>
+      <button class="grafiek-knop" onclick="toonGrafiek('vetten', this)">Vetten</button>
+    </div>
+    <canvas id="weekGrafiek" height="200"></canvas>
+  </div>
+  <div class="dag-kaarten" id="dag-kaarten"></div>
+</div>
+
+<!-- PAGINA: INSTELLINGEN -->
+<div class="pagina" id="pagina-instellingen">
+
+  <div class="api-sectie">
+    <div class="instellingen-titel">📷 Foto-analyse (Gemini API)</div>
+    <div class="api-key-rij">
+      <input type="password" id="inst-apikey" placeholder="AIza..." />
+      <button onclick="slaApiKeyOp()">Opslaan</button>
+    </div>
+    <div class="api-hint">Vereist voor de foto-knop. Haal je key op via <a href="https://aistudio.google.com" target="_blank" style="color:#7c3aed;">aistudio.google.com</a>. Gratis tier: 1500 requests/dag. Wordt alleen lokaal opgeslagen.</div>
+  </div>
+  <div class="instellingen">
+    <div class="instellingen-titel">Dagelijkse limieten</div>
+    <div class="instellingen-rij">
+      <div class="inst-veld">
+        <label>Max calorieën</label>
+        <input type="number" id="inst-cal" value="2000" min="0" onchange="slaInstellingenOp()" />
+        <span>kcal</span>
+      </div>
+      <div class="inst-veld">
+        <label>Max koolhydraten</label>
+        <input type="number" id="inst-kh" value="20" min="0" onchange="slaInstellingenOp()" />
+        <span>gram</span>
+      </div>
+      <div class="inst-veld">
+        <label>Max eiwitten</label>
+        <input type="number" id="inst-ei" value="150" min="0" onchange="slaInstellingenOp()" />
+        <span>gram</span>
+      </div>
+      <div class="inst-veld">
+        <label>Max vetten</label>
+        <input type="number" id="inst-vet" value="150" min="0" onchange="slaInstellingenOp()" />
+        <span>gram</span>
+      </div>
+    </div>
+    <div class="inst-hint">Wijzigingen worden automatisch opgeslagen.</div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('touchend', function(e) {
+      e.preventDefault()
+      this.click()
+    })
+  })
+
+  let dagData = {}
+  let instellingen = { maxCal: 2000, maxKh: 20, maxEi: 150, maxVet: 150 }
+  let actieveGrafiek = 'calorieën'
+  let chart = null
+
+  function vandaagDatum() {
+    return new Date().toLocaleDateString('nl-NL')
+  }
+
+  function vandaagMaaltijden() {
+    let datum = vandaagDatum()
+    if (!dagData[datum]) dagData[datum] = []
+    return dagData[datum]
+  }
+
+  function toonPagina(naam, knop) {
+    document.querySelectorAll('.pagina').forEach(p => p.classList.remove('actief'))
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('actief'))
+    document.getElementById('pagina-' + naam).classList.add('actief')
+    knop.classList.add('actief')
+    if (naam === 'week') updateWeek()
+  }
+
+  function slaInstellingenOp() {
+    instellingen.maxCal = parseInt(document.getElementById('inst-cal').value) || 2000
+    instellingen.maxKh  = parseInt(document.getElementById('inst-kh').value)  || 20
+    instellingen.maxEi  = parseInt(document.getElementById('inst-ei').value)  || 150
+    instellingen.maxVet = parseInt(document.getElementById('inst-vet').value) || 150
+    localStorage.setItem('instellingen', JSON.stringify(instellingen))
+    updateUI()
+  }
+
+  function maakMaaltijd(naam, calorieën, koolhydraten, eiwitten, vetten) {
+    return {
+      naam: naam,
+      datum: vandaagDatum(),
+      tijd: new Date().toLocaleTimeString('nl-NL', {hour: '2-digit', minute: '2-digit'}),
+      calorieën: calorieën,
+      koolhydraten: koolhydraten,
+      eiwitten: eiwitten,
+      vetten: vetten
+    }
+  }
+
+  let bewerkIndex = null
+  let bewerkDatum = null
+
+  function bewerkMaaltijd(index) {
+    bewerkIndex = index
+    bewerkDatum = null
+    let m = vandaagMaaltijden()[index]
+    document.getElementById('modal-naam').value = m.naam
+    document.getElementById('modal-cal').value  = m.calorieën
+    document.getElementById('modal-kh').value   = m.koolhydraten
+    document.getElementById('modal-ei').value   = m.eiwitten
+    document.getElementById('modal-vet').value  = m.vetten
+    document.getElementById('modal').classList.add('actief')
+  }
+
+  function sluitModal() {
+    document.getElementById('modal').classList.remove('actief')
+    bewerkIndex = null
+    bewerkDatum = null
+  }
+
+  function slaModalOp() {
+    if (bewerkIndex === null) return
+    let lijst = bewerkDatum ? dagData[bewerkDatum] : vandaagMaaltijden()
+    let m = lijst[bewerkIndex]
+    m.naam         = document.getElementById('modal-naam').value.trim()
+    m.calorieën    = parseInt(document.getElementById('modal-cal').value) || 0
+    m.koolhydraten = parseInt(document.getElementById('modal-kh').value) || 0
+    m.eiwitten     = parseInt(document.getElementById('modal-ei').value)  || 0
+    m.vetten       = parseInt(document.getElementById('modal-vet').value) || 0
+    localStorage.setItem('dagData', JSON.stringify(dagData))
+    sluitModal()
+    if (bewerkDatum) updateHistorieDag(); else updateUI()
+  }
+
+  function verwijderMaaltijd(index) {
+    vandaagMaaltijden().splice(index, 1)
+    localStorage.setItem('dagData', JSON.stringify(dagData))
+    updateUI()
+  }
+
+  function berekenTotaal(maaltijden) {
+    let cal = 0, kh = 0, ei = 0, vet = 0
+    for (let m of maaltijden) {
+      cal += m.calorieën
+      kh  += m.koolhydraten
+      ei  += m.eiwitten
+      vet += m.vetten
+    }
+    return { calorieën: cal, koolhydraten: kh, eiwitten: ei, vetten: vet }
+  }
+
+  function updateBalk(balkId, labelId, warnId, waarde, max, eenheid, kleur) {
+    let pct = (waarde / max) * 100
+    let pctGeclampt = Math.min(pct, 100)
+    let balk = document.getElementById(balkId)
+    balk.style.width = pctGeclampt + '%'
+    balk.style.background = pct >= 100 ? '#E24B4A' : pct > 80 ? '#EF9F27' : kleur
+    document.getElementById(labelId).textContent = waarde + ' / ' + max + eenheid
+    let warnEl = document.getElementById(warnId)
+    if (pct >= 100) {
+      warnEl.style.display = 'block'
+      warnEl.textContent = 'Let op: je zit over je maximum!'
+    } else if (pct > 80) {
+      warnEl.style.display = 'block'
+      warnEl.textContent = 'Let op: je nadert je limiet!'
+    } else {
+      warnEl.style.display = 'none'
+    }
+  }
+
+  function updateUI() {
+    let maaltijden = vandaagMaaltijden()
+    let totaal = berekenTotaal(maaltijden)
+
+    document.getElementById('total-cal').textContent = totaal.calorieën
+    document.getElementById('total-kh').textContent  = totaal.koolhydraten
+    document.getElementById('total-ei').textContent  = totaal.eiwitten
+    document.getElementById('total-vet').textContent = totaal.vetten
+
+    updateBalk('balk-cal', 'label-cal', 'warn-cal', totaal.calorieën,    instellingen.maxCal, ' kcal', '#1D9E75')
+    updateBalk('balk-kh',  'label-kh',  'warn-kh',  totaal.koolhydraten, instellingen.maxKh,  'g',     '#E28A17')
+    updateBalk('balk-ei',  'label-ei',  'warn-ei',  totaal.eiwitten,     instellingen.maxEi,  'g',     '#378ADD')
+    updateBalk('balk-vet', 'label-vet', 'warn-vet', totaal.vetten,       instellingen.maxVet, 'g',     '#BA7517')
+
+    localStorage.setItem('dagData', JSON.stringify(dagData))
+
+    let lijst = document.getElementById('maaltijden-lijst')
+    document.getElementById('empty-state').style.display = maaltijden.length === 0 ? 'block' : 'none'
+    lijst.querySelectorAll('.meal-card').forEach(e => e.remove())
+
+    for (let index = 0; index < maaltijden.length; index++) {
+      let m = maaltijden[index]
+      let card = document.createElement('div')
+      card.className = 'meal-card'
+      card.innerHTML = `
+        <div class="meal-info">
+          <div class="meal-name">${m.naam}</div>
+          <div class="meal-time">${m.datum} om ${m.tijd}</div>
+        </div>
+        <div class="meal-macros">
+          <div class="macro"><span>${m.calorieën}</span> kcal</div>
+          <div class="macro"><span>${m.koolhydraten}g</span> koolhyd.</div>
+          <div class="macro"><span>${m.eiwitten}g</span> eiwitten</div>
+          <div class="macro"><span>${m.vetten}g</span> vetten</div>
+        </div>
+        <button class="edit-btn" onclick="bewerkMaaltijd(${index})">&#x270E;</button>
+        <button class="delete-btn" onclick="verwijderMaaltijd(${index})">&#x2715;</button>
+      `
+      lijst.appendChild(card)
+    }
+  }
+
+  function getWeeknummer(datumStr) {
+    let parts = datumStr.split('-')
+    let d = new Date(parts[2], parts[1] - 1, parts[0])
+    d.setHours(0, 0, 0, 0)
+    d.setDate(d.getDate() + 3 - (d.getDay() + 6) % 7)
+    let week1 = new Date(d.getFullYear(), 0, 4)
+    return 1 + Math.round(((d - week1) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7)
+  }
+
+  function getLaatste7Dagen() {
+    let dagen = []
+    for (let i = 6; i >= 0; i--) {
+      let d = new Date()
+      d.setDate(d.getDate() - i)
+      dagen.push(d.toLocaleDateString('nl-NL'))
+    }
+    return dagen
+  }
+
+  function maakGrafiekLabels(dagen) {
+    return dagen.map(datum => datum)
+  }
+
+  function maakWeekAnnotaties(dagen) {
+    let annotaties = {}
+    dagen.forEach((datum, index) => {
+      let wk = getWeeknummer(datum)
+      let vorige = index > 0 ? getWeeknummer(dagen[index - 1]) : null
+      if (index > 0 && vorige !== wk) {
+        annotaties['lijn' + index] = {
+          type: 'line',
+          xMin: index - 0.5,
+          xMax: index - 0.5,
+          borderColor: '#aaa',
+          borderWidth: 1,
+          borderDash: [4, 4],
+          label: {
+            display: true,
+            content: 'wk ' + wk,
+            position: 'start',
+            yAdjust: -10,
+            backgroundColor: 'transparent',
+            color: '#888',
+            font: { size: 11 }
+          }
+        }
+      }
+    })
+    return annotaties
+  }
+
+  function toonGrafiek(type, knop) {
+    actieveGrafiek = type
+    document.querySelectorAll('.grafiek-knop').forEach(k => k.classList.remove('actief'))
+    knop.classList.add('actief')
+    tekenGrafiek()
+  }
+
+  function tekenGrafiek() {
+    let dagen = getLaatste7Dagen()
+    let labels = maakGrafiekLabels(dagen)
+    let kleuren = { calorieën: '#1D9E75', koolhydraten: '#E28A17', eiwitten: '#378ADD', vetten: '#BA7517' }
+
+    let data = dagen.map(datum => {
+      let maaltijden = dagData[datum] || []
+      let totaal = berekenTotaal(maaltijden)
+      return totaal[actieveGrafiek]
+    })
+
+    let maxWaarde = { calorieën: instellingen.maxCal, koolhydraten: instellingen.maxKh, eiwitten: instellingen.maxEi, vetten: instellingen.maxVet }
+
+    if (chart) chart.destroy()
+
+    let annotaties = maakWeekAnnotaties(dagen)
+
+    let ctx = document.getElementById('weekGrafiek').getContext('2d')
+    chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: actieveGrafiek,
+          data: data,
+          backgroundColor: kleuren[actieveGrafiek] + '99',
+          borderColor: kleuren[actieveGrafiek],
+          borderWidth: 2,
+          tension: 0.3,
+          fill: true,
+          pointRadius: 5,
+          pointHoverRadius: 7
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          annotation: {
+            annotations: annotaties
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: { color: '#f0f0f0' },
+            ticks: { font: { size: 12 } }
+          },
+          x: {
+            grid: { display: false },
+            ticks: { font: { size: 11 } }
+          }
+        }
+      }
+    })
+  }
+
+  function updateWeek() {
+    tekenGrafiek()
+
+    let vandaag = new Date()
+    let dagen = getLaatste7Dagen().reverse()
+    let container = document.getElementById('dag-kaarten')
+    container.innerHTML = ''
+
+    for (let datum of dagen) {
+      let maaltijden = dagData[datum] || []
+      if (maaltijden.length === 0) continue
+      let totaal = berekenTotaal(maaltijden)
+
+      // Bepaal of dag bewerkbaar is (max 3 dagen terug)
+      let delen = datum.split('-')
+      let dagDatum = new Date(parseInt(delen[2]), parseInt(delen[1]) - 1, parseInt(delen[0]))
+      let vandaagMidnacht = new Date()
+      vandaagMidnacht.setHours(0, 0, 0, 0)
+      let verschil = Math.floor((vandaagMidnacht - dagDatum) / (1000 * 60 * 60 * 24))
+      let bewerkbaar = verschil <= 3
+
+      let kaart = document.createElement('div')
+      kaart.className = 'dag-kaart'
+      kaart.onclick = () => openHistorieDag(datum, bewerkbaar)
+      kaart.innerHTML = `
+        <div class="dag-kaart-header">
+          <div class="dag-datum">${datum}</div>
+          <div class="dag-cal">${totaal.calorieën} kcal →</div>
+        </div>
+        <div class="dag-macros">
+          <div class="dag-macro"><span>${totaal.koolhydraten}g</span> koolhyd.</div>
+          <div class="dag-macro"><span>${totaal.eiwitten}g</span> eiwitten</div>
+          <div class="dag-macro"><span>${totaal.vetten}g</span> vetten</div>
+        </div>
+        <div class="dag-maaltijden">${maaltijden.length} maaltijden</div>
+      `
+      container.appendChild(kaart)
+    }
+
+    if (container.innerHTML === '') {
+      container.innerHTML = '<div class="empty">Nog geen data voor de afgelopen week.</div>'
+    }
+  }
+
+  let hBasismacros = { cal: 0, kh: 0, ei: 0, vet: 0, porties: 1 }
+
+  function stelHBasismacrosIn(cal, kh, ei, vet, porties) {
+    hBasismacros = { cal, kh, ei, vet, porties }
+    document.getElementById('h-portie-waarde').textContent = 1
+    document.getElementById('h-portie-info').textContent = porties > 1 ? `(voor ${porties} personen)` : ''
+    document.getElementById('h-inp-cal').value = cal
+    document.getElementById('h-inp-kh').value  = kh
+    document.getElementById('h-inp-ei').value  = ei
+    document.getElementById('h-inp-vet').value = vet
+  }
+
+  function pasPortieAanHistorie(delta) {
+    let huidig = parseFloat(document.getElementById('h-portie-waarde').textContent) || 1
+    let nieuw = Math.max(0.25, Math.round((huidig + delta * 0.25) * 4) / 4)
+    let label = nieuw % 1 === 0 ? nieuw.toString() : nieuw.toFixed(2).replace(/\.?0+$/, '')
+    document.getElementById('h-portie-waarde').textContent = label
+    document.getElementById('h-inp-cal').value = Math.round(hBasismacros.cal * nieuw)
+    document.getElementById('h-inp-kh').value  = Math.round(hBasismacros.kh  * nieuw)
+    document.getElementById('h-inp-ei').value  = Math.round(hBasismacros.ei  * nieuw)
+    document.getElementById('h-inp-vet').value = Math.round(hBasismacros.vet * nieuw)
+  }
+
+  function renderIngredientenHistorie(lijst) {
+    let container = document.getElementById('h-ingredienten-lijst')
+    container.innerHTML = ''
+    lijst.forEach(ing => container.appendChild(maakIngredientRijHistorie(ing.naam || '', ing.gewicht || '')))
+  }
+
+  function maakIngredientRijHistorie(naam, gewicht) {
+    let rij = document.createElement('div')
+    rij.className = 'ingredienten-rij'
+    rij.innerHTML = `
+      <input type="text" class="ing-naam" value="${naam}" placeholder="Ingrediënt" />
+      <input type="number" class="ing-gewicht" value="${gewicht}" placeholder="0" min="0" />
+      <span class="ing-eenheid">g</span>
+      <button class="ing-verwijder" onclick="this.parentElement.remove()">✕</button>
+    `
+    return rij
+  }
+
+  function voegIngredientToeHistorie() {
+    let container = document.getElementById('h-ingredienten-lijst')
+    container.appendChild(maakIngredientRijHistorie('', ''))
+    container.lastElementChild.querySelector('.ing-naam').focus()
+  }
+
+  // Foto comprimeren als groter dan 4MB
+  async function comprimeerFoto(file) {
+    return new Promise((resolve) => {
+      let reader = new FileReader()
+      reader.onload = (e) => {
+        let img = new Image()
+        img.onload = () => {
+          let canvas = document.createElement('canvas')
+          let maxDim = 1600
+          let w = img.width, h = img.height
+          if (w > maxDim || h > maxDim) {
+            if (w > h) { h = Math.round(h * maxDim / w); w = maxDim }
+            else { w = Math.round(w * maxDim / h); h = maxDim }
+          }
+          canvas.width = w; canvas.height = h
+          canvas.getContext('2d').drawImage(img, 0, 0, w, h)
+          let kwaliteit = 0.85
+          let dataUrl = canvas.toDataURL('image/jpeg', kwaliteit)
+          while (dataUrl.length > 5 * 1024 * 1024 && kwaliteit > 0.3) {
+            kwaliteit -= 0.1
+            dataUrl = canvas.toDataURL('image/jpeg', kwaliteit)
+          }
+          resolve({ base64: dataUrl.split(',')[1], mediaType: 'image/jpeg' })
+        }
+        img.src = e.target.result
+      }
+      reader.readAsDataURL(file)
+    })
+  }
+
+  async function verwerkFotoHistorie(input) {
+    let file = input.files[0]
+    if (!file) return
+    let apiKey = localStorage.getItem('geminiApiKey')
+    if (!apiKey) { alert('Voer eerst je Gemini API key in bij Instellingen.'); input.value = ''; return }
+
+    let btn = document.getElementById('h-foto-btn')
+    let spinner = document.getElementById('h-foto-spinner')
+    let hint = document.getElementById('h-foto-hint')
+    btn.disabled = true
+    spinner.style.display = 'block'
+    spinner.textContent = file.size > 4 * 1024 * 1024 ? '⏳ Foto verkleinen...' : '⏳ Foto analyseren...'
+    hint.style.display = 'none'
+
+    try {
+      let { base64, mediaType } = await comprimeerFoto(file)
+
+      // Stap 1: barcode check
+      spinner.textContent = '⏳ Barcode zoeken...'
+      let barcodeResultaat = await geminiVraag(apiKey,
+        'Is er een EAN barcode op deze foto? Als ja, geef ALLEEN het barcodenummer terug als getal. Als er geen barcode is, geef ALLEEN "geen" terug.',
+        { base64, mediaType }
+      )
+      barcodeResultaat = barcodeResultaat.replace(/\s/g, '')
+
+      if (barcodeResultaat !== 'geen' && /^\d{8,14}$/.test(barcodeResultaat)) {
+        spinner.textContent = `⏳ Product opzoeken...`
+        await zoekBarcodeInOFF(barcodeResultaat, true)
+        return
+      }
+
+      // Stap 2: gewone foto-analyse
+      spinner.textContent = '⏳ Gemini analyseert je maaltijd...'
+      let fotoTekst = await geminiVraag(apiKey,
+        'Je bent een nauwkeurige voedingsdeskundige. Analyseer de foto en identificeer alle ingrediënten met geschat gewicht. Antwoord ALLEEN met een geldig JSON object, geen andere tekst. Formaat: {"naam": "...", "porties": 1, "ingrediënten": [{"naam": "...", "gewicht": 0}], "calorieën": 0, "koolhydraten": 0, "eiwitten": 0, "vetten": 0}. Analyseer deze maaltijd.',
+        { base64, mediaType }
+      )
+      let macros = JSON.parse(fotoTekst.replace(/```json|```/g, '').trim())
+      if (macros.naam) document.getElementById('h-inp-naam').value = macros.naam
+      if (macros['ingrediënten'] && Array.isArray(macros['ingrediënten'])) {
+        renderIngredientenHistorie(macros['ingrediënten'])
+        document.getElementById('h-ingredienten-sectie').style.display = 'block'
+      }
+      stelHBasismacrosIn(Math.round(macros.calorieën||0), Math.round(macros.koolhydraten||0), Math.round(macros.eiwitten||0), Math.round(macros.vetten||0), macros.porties||1)
+      hint.textContent = '~ Inschatting door Gemini op basis van foto'; hint.className = 'foto-hint schatting'; hint.style.display = 'block'
+    } catch(err) { alert('Fout: ' + err.message) }
+    finally { btn.disabled = false; spinner.style.display = 'none'; spinner.textContent = '⏳ Foto analyseren...'; input.value = '' }
+  }
+
+  async function berekenViaOmschrijvingHistorie() {
+    let naam = document.getElementById('h-inp-naam').value.trim()
+    if (!naam) { alert('Vul eerst een omschrijving in'); return }
+    let apiKey = localStorage.getItem('geminiApiKey')
+    if (!apiKey) { alert('Voer eerst je Gemini API key in bij Instellingen.'); return }
+
+    let btn = document.getElementById('h-bereken-btn')
+    let spinner = document.getElementById('h-foto-spinner')
+    let hint = document.getElementById('h-foto-hint')
+    btn.disabled = true; btn.textContent = '⏳...'; spinner.style.display = 'block'; hint.style.display = 'none'
+
+    let match = zoekInReceptenboek(naam)
+    if (match) {
+      let d = match.data
+      if (d.ingrediënten) { renderIngredientenHistorie(d.ingrediënten); document.getElementById('h-ingredienten-sectie').style.display = 'block' }
+      stelHBasismacrosIn(d.calorieën, d.koolhydraten, d.eiwitten, d.vetten, d.porties||1)
+      hint.textContent = `⚡ Uit je receptenboek — "${match.naam}" (${Math.round(match.score * 100)}% match)`; hint.className = 'foto-hint receptenboek'; hint.style.display = 'block'
+      btn.disabled = false; btn.textContent = '✨ Bereken'; spinner.style.display = 'none'
+      return
+    }
+
+    try {
+      let omsTekst = await geminiVraag(apiKey,
+        `Je bent een nauwkeurige voedingsdeskundige. Negeer merknamen. Splits altijd in losse ingrediënten met gewichten. Antwoord ALLEEN met JSON, geen andere tekst. Formaat: {"naam": "...", "porties": 1, "ingrediënten": [{"naam": "...", "gewicht": 0}], "calorieën": 0, "koolhydraten": 0, "eiwitten": 0, "vetten": 0}. Bereken macronutriënten voor: "${naam}".`
+      )
+      let macros = JSON.parse(omsTekst.replace(/```json|```/g, '').trim())
+      if (macros.naam) document.getElementById('h-inp-naam').value = macros.naam
+      if (macros['ingrediënten'] && Array.isArray(macros['ingrediënten'])) {
+        renderIngredientenHistorie(macros['ingrediënten'])
+        document.getElementById('h-ingredienten-sectie').style.display = 'block'
+      }
+      stelHBasismacrosIn(Math.round(macros.calorieën||0), Math.round(macros.koolhydraten||0), Math.round(macros.eiwitten||0), Math.round(macros.vetten||0), macros.porties||1)
+      hint.textContent = '~ Inschatting door Gemini — controleer en pas aan'; hint.className = 'foto-hint schatting'; hint.style.display = 'block'
+    } catch(err) { alert('Fout: ' + err.message) }
+    finally { btn.disabled = false; btn.textContent = '✨ Bereken'; spinner.style.display = 'none' }
+  }
+
+  async function herberekenHistorie() {
+    let rijen = document.querySelectorAll('#h-ingredienten-lijst .ingredienten-rij')
+    let ingredienten = []
+    rijen.forEach(rij => {
+      let naam = rij.querySelector('.ing-naam').value.trim()
+      let gewicht = rij.querySelector('.ing-gewicht').value.trim()
+      if (naam) ingredienten.push(`${naam} ${gewicht ? gewicht + 'g' : ''}`)
+    })
+    if (!ingredienten.length) return
+    let apiKey = localStorage.getItem('geminiApiKey')
+    if (!apiKey) return
+    let btn = document.getElementById('h-herbereken-btn')
+    btn.disabled = true; btn.textContent = '⏳ Berekenen...'
+    try {
+      let hHerTekst = await geminiVraag(apiKey,
+        `Bereken macronutriënten op basis van ingrediënten. Antwoord ALLEEN met JSON, geen andere tekst. Formaat: {"calorieën": 0, "koolhydraten": 0, "eiwitten": 0, "vetten": 0}. Bereken totale macros voor: ${ingredienten.join(', ')}.`
+      )
+      let macros = JSON.parse(hHerTekst.replace(/```json|```/g, '').trim())
+      stelHBasismacrosIn(Math.round(macros.calorieën||0), Math.round(macros.koolhydraten||0), Math.round(macros.eiwitten||0), Math.round(macros.vetten||0), 1)
+    } catch(err) { alert('Fout: ' + err.message) }
+    finally { btn.disabled = false; btn.textContent = '🔄 Herbereken macros' }
+  }
+
+  async function zoekBarcodeInOFF(barcode, voorHistorie) {
+    let hint = document.getElementById(voorHistorie ? 'h-foto-hint' : 'foto-hint')
+    let spinner = document.getElementById(voorHistorie ? 'h-foto-spinner' : 'foto-spinner')
+    hint.style.display = 'none'
+    spinner.style.display = 'block'
+    spinner.textContent = '⏳ Product opzoeken...'
+
+    try {
+      let response = await fetch(`https://world.openfoodfacts.org/api/v0/product/${barcode}.json`)
+      let data = await response.json()
+
+      if (data.status !== 1 || !data.product) {
+        hint.textContent = '~ Product niet gevonden in Open Food Facts — vul handmatig in'
+        hint.className = 'foto-hint schatting'
+        hint.style.display = 'block'
+        spinner.style.display = 'none'
+        spinner.textContent = '⏳ Gemini analyseert je maaltijd...'
+        return
+      }
+
+      let p = data.product
+      let n = p.nutriments
+      let gewicht = parseFloat(p.product_quantity) || 100
+      let per100 = {
+        kcal: Math.round(n['energy-kcal_100g'] || n['energy_100g'] / 4.184 || 0),
+        kh:   Math.round(n['carbohydrates_100g'] || 0),
+        ei:   Math.round(n['proteins_100g'] || 0),
+        vet:  Math.round(n['fat_100g'] || 0)
+      }
+
+      let totaalKcal = Math.round(per100.kcal * gewicht / 100)
+      let totaalKh   = Math.round(per100.kh   * gewicht / 100)
+      let totaalEi   = Math.round(per100.ei   * gewicht / 100)
+      let totaalVet  = Math.round(per100.vet  * gewicht / 100)
+      let naam = p.product_name || p.product_name_nl || barcode
+
+      let naamVeld = voorHistorie ? 'h-inp-naam' : 'inp-naam'
+      document.getElementById(naamVeld).value = naam
+
+      let ingredienten = [{ naam: naam, gewicht: gewicht }]
+      if (voorHistorie) {
+        renderIngredientenHistorie(ingredienten)
+        document.getElementById('h-ingredienten-sectie').style.display = 'block'
+        stelHBasismacrosIn(totaalKcal, totaalKh, totaalEi, totaalVet, 1)
+      } else {
+        renderIngredienten(ingredienten)
+        document.getElementById('ingredienten-sectie').style.display = 'block'
+        stelBasismacrosIn(totaalKcal, totaalKh, totaalEi, totaalVet, 1)
+      }
+
+      hint.textContent = `✓ Exacte gegevens van Open Food Facts — ${naam} (${gewicht}g)`
+      hint.className = 'foto-hint exact'
+      hint.style.display = 'block'
+
+    } catch(err) {
+      hint.textContent = '~ Fout bij ophalen — vul handmatig in'
+      hint.className = 'foto-hint schatting'
+      hint.style.display = 'block'
+    } finally {
+      spinner.style.display = 'none'
+      spinner.textContent = '⏳ Gemini analyseert je maaltijd...'
+    }
+  }
+
+  let huidigHistorieDatum = null
+  let huidigHistorieBewerkbaar = false
+
+  function openHistorieDag(datum, bewerkbaar) {
+    huidigHistorieDatum = datum
+    huidigHistorieBewerkbaar = bewerkbaar
+
+    document.getElementById('historie-datum-label').textContent = datum
+    document.getElementById('h-add-form').style.display = bewerkbaar ? 'block' : 'none'
+
+    // Tabs verbergen
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('actief'))
+    document.querySelectorAll('.pagina').forEach(p => p.classList.remove('actief'))
+    document.getElementById('pagina-historiedag').classList.add('actief')
+
+    updateHistorieDag()
+  }
+
+  function updateHistorieDag() {
+    let datum = huidigHistorieDatum
+    let maaltijden = dagData[datum] || []
+    let totaal = berekenTotaal(maaltijden)
+
+    document.getElementById('h-total-cal').textContent = totaal.calorieën
+    document.getElementById('h-total-kh').textContent  = totaal.koolhydraten
+    document.getElementById('h-total-ei').textContent  = totaal.eiwitten
+    document.getElementById('h-total-vet').textContent = totaal.vetten
+
+    let pct = (v, max) => Math.min(100, Math.round(v / max * 100)) + '%'
+    document.getElementById('h-balk-cal').style.width = pct(totaal.calorieën, instellingen.maxCal)
+    document.getElementById('h-balk-kh').style.width  = pct(totaal.koolhydraten, instellingen.maxKh)
+    document.getElementById('h-balk-ei').style.width  = pct(totaal.eiwitten, instellingen.maxEi)
+    document.getElementById('h-balk-vet').style.width = pct(totaal.vetten, instellingen.maxVet)
+    document.getElementById('h-label-cal').textContent = `${totaal.calorieën} / ${instellingen.maxCal} kcal`
+    document.getElementById('h-label-kh').textContent  = `${totaal.koolhydraten} / ${instellingen.maxKh}g`
+    document.getElementById('h-label-ei').textContent  = `${totaal.eiwitten} / ${instellingen.maxEi}g`
+    document.getElementById('h-label-vet').textContent = `${totaal.vetten} / ${instellingen.maxVet}g`
+
+    let lijst = document.getElementById('h-maaltijden-lijst')
+    lijst.innerHTML = ''
+
+    if (!huidigHistorieBewerkbaar) {
+      let banner = document.createElement('div')
+      banner.className = 'h-readonly-banner'
+      banner.textContent = '📖 Ouder dan 3 dagen — alleen leesbaar'
+      lijst.appendChild(banner)
+    }
+
+    if (maaltijden.length === 0) {
+      lijst.innerHTML += '<div class="empty">Geen maaltijden op deze dag.</div>'
+      return
+    }
+
+    maaltijden.forEach((m, i) => {
+      let kaart = document.createElement('div')
+      kaart.className = 'meal-card'
+      kaart.innerHTML = `
+        <div class="meal-info">
+          <div class="meal-name">${m.naam}</div>
+          <div class="meal-time">${m.datum || datum} om ${m.tijd || ''}</div>
+        </div>
+        <div class="meal-macros">
+          <div class="macro"><span>${m.calorieën}</span> kcal</div>
+          <div class="macro"><span>${m.koolhydraten}g</span> koolhyd.</div>
+          <div class="macro"><span>${m.eiwitten}g</span> eiwitten</div>
+          <div class="macro"><span>${m.vetten}g</span> vetten</div>
+        </div>
+        ${huidigHistorieBewerkbaar ? `
+          <button class="edit-btn" onclick="bewerkHistorieMaaltijdModal(${i})">&#x270E;</button>
+          <button class="delete-btn" onclick="verwijderHistorieMaaltijd(${i})">&#x2715;</button>
+        ` : ''}
+      `
+      lijst.appendChild(kaart)
+    })
+  }
+
+  function voegHistorieToe() {
+    let naam = document.getElementById('h-inp-naam').value.trim()
+    let cal  = parseInt(document.getElementById('h-inp-cal').value) || 0
+    let kh   = parseInt(document.getElementById('h-inp-kh').value)  || 0
+    let ei   = parseInt(document.getElementById('h-inp-ei').value)  || 0
+    let vet  = parseInt(document.getElementById('h-inp-vet').value) || 0
+    if (!naam) return
+    let ingredienten = []
+    document.querySelectorAll('#h-ingredienten-lijst .ingredienten-rij').forEach(rij => {
+      let n = rij.querySelector('.ing-naam')?.value.trim()
+      let g = parseFloat(rij.querySelector('.ing-gewicht')?.value) || 0
+      if (n) ingredienten.push({ naam: n, gewicht: g })
+    })
+    slaReceptOp(naam, { calorieën: cal, koolhydraten: kh, eiwitten: ei, vetten: vet, porties: 1, ingrediënten: ingredienten })
+    if (!dagData[huidigHistorieDatum]) dagData[huidigHistorieDatum] = []
+    dagData[huidigHistorieDatum].push(maakMaaltijd(naam, cal, kh, ei, vet))
+    localStorage.setItem('dagData', JSON.stringify(dagData))
+    document.getElementById('h-inp-naam').value = ''
+    document.getElementById('h-inp-cal').value  = ''
+    document.getElementById('h-inp-kh').value   = ''
+    document.getElementById('h-inp-ei').value   = ''
+    document.getElementById('h-inp-vet').value  = ''
+    document.getElementById('h-ingredienten-sectie').style.display = 'none'
+    document.getElementById('h-foto-hint').style.display = 'none'
+    updateHistorieDag()
+  }
+
+  function verwijderHistorieMaaltijd(index) {
+    if (!confirm('Maaltijd verwijderen?')) return
+    dagData[huidigHistorieDatum].splice(index, 1)
+    if (dagData[huidigHistorieDatum].length === 0) delete dagData[huidigHistorieDatum]
+    localStorage.setItem('dagData', JSON.stringify(dagData))
+    updateHistorieDag()
+  }
+
+  function bewerkHistorieMaaltijdModal(index) {
+    bewerkIndex = index
+    bewerkDatum = huidigHistorieDatum
+    let m = dagData[huidigHistorieDatum][index]
+    document.getElementById('modal-naam').value = m.naam
+    document.getElementById('modal-cal').value  = m.calorieën
+    document.getElementById('modal-kh').value   = m.koolhydraten
+    document.getElementById('modal-ei').value   = m.eiwitten
+    document.getElementById('modal-vet').value  = m.vetten
+    document.getElementById('modal').classList.add('actief')
+  }
+
+  function voegToe() {
+    let naam = document.getElementById('inp-naam').value.trim()
+    let cal  = parseInt(document.getElementById('inp-cal').value) || 0
+    let kh   = parseInt(document.getElementById('inp-kh').value)  || 0
+    let ei   = parseInt(document.getElementById('inp-ei').value)  || 0
+    let vet  = parseInt(document.getElementById('inp-vet').value) || 0
+    if (!naam) return
+
+    // Sla op in receptenboek met eventuele ingrediënten
+    let ingredienten = []
+    document.querySelectorAll('.ingredienten-rij').forEach(rij => {
+      let n = rij.querySelector('.ing-naam')?.value.trim()
+      let g = parseFloat(rij.querySelector('.ing-gewicht')?.value) || 0
+      if (n) ingredienten.push({ naam: n, gewicht: g })
+    })
+    slaReceptOp(naam, { calorieën: cal, koolhydraten: kh, eiwitten: ei, vetten: vet, porties: 1, ingrediënten: ingredienten })
+
+    vandaagMaaltijden().push(maakMaaltijd(naam, cal, kh, ei, vet))
+    document.getElementById('inp-naam').value = ''
+    document.getElementById('inp-cal').value  = ''
+    document.getElementById('inp-kh').value   = ''
+    document.getElementById('inp-ei').value   = ''
+    document.getElementById('inp-vet').value  = ''
+    document.getElementById('ingredienten-sectie').style.display = 'none'
+    document.getElementById('foto-hint').style.display = 'none'
+    updateUI()
+  }
+
+  let opgeslagenData = localStorage.getItem('dagData')
+  if (opgeslagenData) dagData = JSON.parse(opgeslagenData)
+
+  let opgeslagenInstellingen = localStorage.getItem('instellingen')
+  if (opgeslagenInstellingen) instellingen = JSON.parse(opgeslagenInstellingen)
+
+  document.getElementById('inst-cal').value = instellingen.maxCal
+  document.getElementById('inst-kh').value  = instellingen.maxKh
+  document.getElementById('inst-ei').value  = instellingen.maxEi
+  document.getElementById('inst-vet').value = instellingen.maxVet
+
+  // ============================================
+  // JOUW API KEY — alleen hier invullen
+  // Gemini API helper
+  async function geminiVraag(apiKey, tekst, afbeelding) {
+    let parts = []
+    if (afbeelding) {
+      parts.push({ inline_data: { mime_type: afbeelding.mediaType, data: afbeelding.base64 } })
+    }
+    parts.push({ text: tekst })
+
+    let response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-04-17:generateContent?key=${apiKey}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          contents: [{ parts }],
+          generationConfig: { temperature: 0.1 }
+        })
+      }
+    )
+    let data = await response.json()
+    if (!response.ok) {
+      throw new Error(data.error?.message || 'Gemini API fout ' + response.status)
+    }
+    if (!data.candidates || !data.candidates[0]) {
+      throw new Error('Geen resultaat van Gemini — mogelijk geblokkeerd: ' + JSON.stringify(data))
+    }
+    return data.candidates[0].content.parts[0].text.trim()
+  }
+
+  // API key laden
+  let opgeslagenKey = localStorage.getItem('geminiApiKey')
+  if (opgeslagenKey) document.getElementById('inst-apikey').value = opgeslagenKey
+
+  function slaApiKeyOp() {
+    let key = document.getElementById('inst-apikey').value.trim()
+    localStorage.setItem('geminiApiKey', key)
+    alert(key ? '✓ API key opgeslagen!' : 'API key verwijderd.')
+  }
+
+  async function verwerkFoto(input) {
+    let file = input.files[0]
+    if (!file) return
+
+    let apiKey = localStorage.getItem('geminiApiKey')
+    if (!apiKey) { alert('Voer eerst je Gemini API key in bij Instellingen.'); input.value = ''; return }
+
+    let btn = document.getElementById('foto-btn')
+    let spinner = document.getElementById('foto-spinner')
+    let hint = document.getElementById('foto-hint')
+    btn.disabled = true
+    spinner.style.display = 'block'
+    spinner.textContent = file.size > 4 * 1024 * 1024 ? '⏳ Foto verkleinen...' : '⏳ Foto analyseren...'
+    hint.style.display = 'none'
+
+    try {
+      let { base64, mediaType } = await comprimeerFoto(file)
+
+      // Stap 1: Claude checkt of er een barcode op de foto staat
+      spinner.textContent = '⏳ Barcode zoeken...'
+      let barcodeResultaat = await geminiVraag(apiKey,
+        'Is er een EAN barcode (streepjescode) op deze foto? Als ja, geef ALLEEN het barcodenummer terug als getal (bijv. 8710522959336). Als er geen barcode is, geef ALLEEN "geen" terug. Niets anders.',
+        { base64, mediaType }
+      )
+      barcodeResultaat = barcodeResultaat.replace(/\s/g, '')
+
+      // Stap 2a: Barcode gevonden → Open Food Facts opzoeken
+      if (barcodeResultaat !== 'geen' && /^\d{8,14}$/.test(barcodeResultaat)) {
+        spinner.textContent = `⏳ Product opzoeken (${barcodeResultaat})...`
+        await zoekBarcodeInOFF(barcodeResultaat, false)
+        return
+      }
+
+      // Stap 2b: Geen barcode → gewone foto-analyse
+      spinner.textContent = '⏳ Gemini analyseert je maaltijd...'
+      let tekst = await geminiVraag(apiKey,
+        'Je bent een nauwkeurige voedingsdeskundige. Analyseer de foto zorgvuldig. Als je een verpakking of label ziet, lees dan de exacte voedingswaarden daarvan. Identificeer alle ingrediënten met geschat gewicht. Als het een gerecht voor meerdere personen is, geef dan de macros voor 1 portie en vermeld het aantal personen in het veld "porties". Antwoord ALLEEN met een geldig JSON object, geen andere tekst. Formaat: {"naam": "...", "porties": 1, "ingrediënten": [{"naam": "...", "gewicht": 200}], "calorieën": 0, "koolhydraten": 0, "eiwitten": 0, "vetten": 0}. Analyseer deze maaltijd: geef de naam, alle zichtbare ingrediënten met geschat gewicht in gram, en totale macronutriënten.',
+        { base64, mediaType }
+      )
+      let macros = JSON.parse(tekst.replace(/```json|```/g, '').trim())
+      if (macros.naam) document.getElementById('inp-naam').value = macros.naam
+      if (macros['ingrediënten'] && Array.isArray(macros['ingrediënten'])) {
+        renderIngredienten(macros['ingrediënten'])
+        document.getElementById('ingredienten-sectie').style.display = 'block'
+      }
+      stelBasismacrosIn(Math.round(macros.calorieën||0), Math.round(macros.koolhydraten||0), Math.round(macros.eiwitten||0), Math.round(macros.vetten||0), macros.porties||1)
+      hint.textContent = '~ Inschatting door Gemini op basis van foto'
+      hint.className = 'foto-hint schatting'
+      hint.style.display = 'block'
+
+    } catch(err) { alert('Fout bij analyseren: ' + err.message) }
+    finally { btn.disabled = false; spinner.style.display = 'none'; spinner.textContent = '⏳ Foto analyseren...'; input.value = '' }
+  }
+
+  // Receptenboek — leren van eerder ingevoerde gerechten
+  function getReceptenboek() {
+    try { return JSON.parse(localStorage.getItem('receptenboek') || '{}') } catch(e) { return {} }
+  }
+
+  function slaReceptOp(naam, data) {
+    let boek = getReceptenboek()
+    boek[naam.toLowerCase().trim()] = data
+    localStorage.setItem('receptenboek', JSON.stringify(boek))
+  }
+
+  // Fuzzy matching — Levenshtein afstand
+  function levenshtein(a, b) {
+    let m = a.length, n = b.length
+    let dp = Array.from({length: m+1}, (_, i) => Array.from({length: n+1}, (_, j) => j === 0 ? i : 0))
+    for (let j = 1; j <= n; j++) dp[0][j] = j
+    for (let i = 1; i <= m; i++)
+      for (let j = 1; j <= n; j++)
+        dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1] : 1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])
+    return dp[m][n]
+  }
+
+  function zoekInReceptenboek(invoer) {
+    let boek = getReceptenboek()
+    let sleutels = Object.keys(boek)
+    if (sleutels.length === 0) return null
+    let zoek = invoer.toLowerCase().trim()
+    let besteMatch = null
+    let besteScore = 0
+    for (let sleutel of sleutels) {
+      let maxLen = Math.max(zoek.length, sleutel.length)
+      let afstand = levenshtein(zoek, sleutel)
+      let score = 1 - afstand / maxLen
+      if (score > besteScore) { besteScore = score; besteMatch = sleutel }
+    }
+    return besteScore >= 0.70 ? { data: boek[besteMatch], naam: besteMatch, score: besteScore } : null
+  }
+
+  async function berekenViaOmschrijving() {
+    let naam = document.getElementById('inp-naam').value.trim()
+    if (!naam) { alert('Vul eerst een omschrijving in, bijv. "een glas rosé" of "kipfilet 150g met broccoli"'); return }
+
+    let apiKey = localStorage.getItem('geminiApiKey')
+    if (!apiKey) { alert('Voer eerst je Gemini API key in bij Instellingen.'); return }
+
+    let btn = document.getElementById('bereken-btn')
+    let spinner = document.getElementById('foto-spinner')
+    let hint = document.getElementById('foto-hint')
+    btn.disabled = true
+    btn.textContent = '⏳...'
+    hint.style.display = 'none'
+    hint.className = 'foto-hint'
+
+    // Stap 1: Check receptenboek
+    let match = zoekInReceptenboek(naam)
+    if (match) {
+      let d = match.data
+      if (d.ingrediënten && Array.isArray(d.ingrediënten)) {
+        renderIngredienten(d.ingrediënten)
+        document.getElementById('ingredienten-sectie').style.display = 'block'
+      }
+      stelBasismacrosIn(d.calorieën, d.koolhydraten, d.eiwitten, d.vetten, d.porties || 1)
+      hint.textContent = `⚡ Uit je receptenboek — "${match.naam}" (${Math.round(match.score * 100)}% match)`
+      hint.className = 'foto-hint receptenboek'
+      hint.style.display = 'block'
+      btn.disabled = false
+      btn.textContent = '✨ Bereken'
+      spinner.style.display = 'none'
+      return
+    }
+
+    // Stap 2: Niet gevonden — Gemini berekent
+    spinner.style.display = 'block'
+    try {
+      let berekendTekst = await geminiVraag(apiKey,
+        `Je bent een nauwkeurige voedingsdeskundige. Negeer merknamen en supermarktnamen volledig — bereken puur op basis van het product zelf. Geef ALTIJD de volledige verpakkingsinhoud als gewicht tenzij anders gevraagd. Als het een gerecht voor meerdere personen is, geef macros voor 1 portie en vermeld porties. Splits ALTIJD uit in losse ingrediënten met gewichten. Antwoord ALLEEN met een geldig JSON object, geen andere tekst. Formaat: {"naam": "...", "porties": 1, "ingrediënten": [{"naam": "...", "gewicht": 0}], "calorieën": 0, "koolhydraten": 0, "eiwitten": 0, "vetten": 0}. Bereken de macronutriënten voor: "${naam}".`
+      )
+      let macros = JSON.parse(berekendTekst.replace(/```json|```/g, '').trim())
+
+      if (macros.naam) document.getElementById('inp-naam').value = macros.naam
+      if (macros['ingrediënten'] && Array.isArray(macros['ingrediënten'])) {
+        renderIngredienten(macros['ingrediënten'])
+        document.getElementById('ingredienten-sectie').style.display = 'block'
+      }
+      stelBasismacrosIn(
+        Math.round(macros.calorieën || 0),
+        Math.round(macros.koolhydraten || 0),
+        Math.round(macros.eiwitten || 0),
+        Math.round(macros.vetten || 0),
+        macros.porties || 1
+      )
+      hint.textContent = '~ Inschatting door Gemini — controleer en pas aan'
+      hint.className = 'foto-hint schatting'
+      hint.style.display = 'block'
+
+    } catch(err) {
+      alert('Fout bij berekenen: ' + err.message)
+    } finally {
+      btn.disabled = false
+      btn.textContent = '✨ Bereken'
+      spinner.style.display = 'none'
+    }
+  }
+
+  // Basismacros opslaan voor portie-berekening
+  let basismacros = { cal: 0, kh: 0, ei: 0, vet: 0, porties: 1 }
+
+  function stelBasismacrosIn(cal, kh, ei, vet, porties) {
+    basismacros = { cal, kh, ei, vet, porties }
+    document.getElementById('portie-waarde').textContent = 1
+    document.getElementById('portie-info').textContent = porties > 1 ? `(gerecht voor ${porties} personen)` : ''
+    document.getElementById('inp-cal').value = cal
+    document.getElementById('inp-kh').value  = kh
+    document.getElementById('inp-ei').value  = ei
+    document.getElementById('inp-vet').value = vet
+  }
+
+  function pasPortieAan(delta) {
+    let huidig = parseFloat(document.getElementById('portie-waarde').textContent) || 1
+    let nieuw = Math.max(0.25, Math.round((huidig + delta * 0.25) * 4) / 4)
+    let label = nieuw % 1 === 0 ? nieuw.toString() : nieuw.toFixed(2).replace(/\.?0+$/, '')
+    document.getElementById('portie-waarde').textContent = label
+    document.getElementById('inp-cal').value = Math.round(basismacros.cal * nieuw)
+    document.getElementById('inp-kh').value  = Math.round(basismacros.kh  * nieuw)
+    document.getElementById('inp-ei').value  = Math.round(basismacros.ei  * nieuw)
+    document.getElementById('inp-vet').value = Math.round(basismacros.vet * nieuw)
+  }
+
+  function renderIngredienten(lijst) {
+    let container = document.getElementById('ingredienten-lijst')
+    container.innerHTML = ''
+    lijst.forEach((ing, i) => {
+      container.appendChild(maakIngredientRij(ing.naam || '', ing.gewicht || ''))
+    })
+  }
+
+  function maakIngredientRij(naam, gewicht) {
+    let rij = document.createElement('div')
+    rij.className = 'ingredienten-rij'
+    rij.innerHTML = `
+      <input type="text" class="ing-naam" value="${naam}" placeholder="Ingrediënt" />
+      <input type="number" class="ing-gewicht" value="${gewicht}" placeholder="0" min="0" />
+      <span class="ing-eenheid">g</span>
+      <button class="ing-verwijder" onclick="this.parentElement.remove()">✕</button>
+    `
+    return rij
+  }
+
+  function voegIngredientToe() {
+    let container = document.getElementById('ingredienten-lijst')
+    container.appendChild(maakIngredientRij('', ''))
+    container.lastElementChild.querySelector('.ing-naam').focus()
+  }
+
+  async function herbereken() {
+    let rijen = document.querySelectorAll('.ingredienten-rij')
+    let ingredienten = []
+    rijen.forEach(rij => {
+      let naam = rij.querySelector('.ing-naam').value.trim()
+      let gewicht = rij.querySelector('.ing-gewicht').value.trim()
+      if (naam) ingredienten.push(`${naam} ${gewicht ? gewicht + 'g' : ''}`)
+    })
+    if (!ingredienten.length) return
+
+    let apiKey = localStorage.getItem('geminiApiKey')
+    if (!apiKey) { alert('Geen API key gevonden.'); return }
+
+    let btn = document.getElementById('herbereken-btn')
+    btn.disabled = true
+    btn.textContent = '⏳ Berekenen...'
+
+    try {
+      let herTekst = await geminiVraag(apiKey,
+        `Je bent een voedingsdeskundige. Bereken macronutriënten op basis van een ingrediëntenlijst met gewichten. Antwoord ALLEEN met een geldig JSON object, geen andere tekst. Formaat: {"calorieën": 0, "koolhydraten": 0, "eiwitten": 0, "vetten": 0}. Bereken de totale macronutriënten voor: ${ingredienten.join(', ')}.`
+      )
+      let macros = JSON.parse(herTekst.replace(/```json|```/g, '').trim())
+
+      let cal = Math.round(macros.calorieën || 0)
+      let kh  = Math.round(macros.koolhydraten || 0)
+      let ei  = Math.round(macros.eiwitten || 0)
+      let vet = Math.round(macros.vetten || 0)
+      stelBasismacrosIn(cal, kh, ei, vet, 1)
+
+    } catch(err) {
+      alert('Fout bij herberekenen: ' + err.message)
+    } finally {
+      btn.disabled = false
+      btn.textContent = '🔄 Herbereken macros'
+    }
+  }
+
+  updateUI()
+
+  // Splash screen verbergen na 1.5 seconden
+  setTimeout(() => {
+    let splash = document.getElementById('splash')
+    splash.style.opacity = '0'
+    setTimeout(() => splash.style.display = 'none', 500)
+  }, 1500)
+
+  // Service Worker registreren voor offline gebruik
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').catch(() => {})
+  }
+</script>
+</body>
+</html>
